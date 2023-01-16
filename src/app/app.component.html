@@ -1,0 +1,144 @@
+<style>
+  :host {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+    font-size: 14px;
+    color: #333;
+    box-sizing: border-box;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    margin: 8px 0;
+  }
+
+  .content {
+    display: flex;
+    margin: 60px auto 32px;
+    padding: 0 16px;
+    max-width: 960px;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .card-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 16px;
+  }
+
+  .card {
+    all: unset;
+    border-radius: 4px;
+    border: 1px solid #eee;
+    background-color: #fafafa;
+    height: 40px;
+    width: 200px;
+    margin: 0 8px 16px;
+    padding: 16px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.2s ease-in-out;
+    line-height: 24px;
+  }
+
+  .card-container .card:not(:last-child) {
+    margin-right: 0;
+  }
+
+  .card.card-small {
+    height: 16px;
+  }
+
+  .card.highlight-card {
+    background-color: #110E76;
+    color: white;
+    font-weight: 600;
+    border: none;
+    width: 100%;
+    min-width: 30%;
+    position: relative;
+  }
+
+  .zdjecie {
+    position: absolute;
+    top: -50px;
+    left: 10px;
+    width: 150px;
+    height: 150px;
+  }
+
+  .zdjecieMale {
+    position: relative;
+    width: 150px;
+    height: 150px;
+    margin-bottom: 10px;
+  }
+
+  td, tr { border: 2px; }
+  table {
+    position: relative;
+  }
+
+  wieksza 
+  {
+    font-size: 24px;
+  }
+
+  @media screen and (max-width: 589px) {
+    .content{
+      margin-top: 10px;
+    }
+  }
+</style>
+
+<div class="content" role="main">
+  <div class="card highlight-card card-small">
+    <img src="assets/zdj.jpg" alt="{{title}}" class="zdjecie" *ngIf="isSmallScreen === false" />
+    <span><h3>{{ title }}</h3></span>
+  </div>
+  <img src="assets/zdj.jpg" alt="{{title}}" class="zdjecieMale" *ngIf="isSmallScreen === true" />
+  <div>
+      <table style="text-align: center;display: inline-block;font-size:16px;">
+          <tr>
+              <td><b>Rejestracja:</b></td>
+           </tr>
+          <tr>
+             <td><b><a href="tel:585546493">58 554 64 93</a></b></td>
+          </tr>
+          <tr>
+             <td><b>ul. Kwiatkowskiego 11c (Gdańsk, Osowa</b>)</td>
+          </tr>
+       </table>
+  </div>
+  <div style="width: 100%;text-align: left;">
+      <br />
+      Absolwent wydziału lekarskiego Akademii Medycznej w Gdańsku 1979 roku.   
+      <br />
+      <ul>
+      <li>	W 1982 roku uzyskał I stopień specjalizacji w zakresie okulistyki.
+      </li><li>	W 1985 roku – II stopień specjalizacji.
+      </li><li>	Pracę doktorska pt. „Własny sposób leczenia doświadczalnej grzybicy rogówki” obronił w 1986 roku z wyróżnieniem.
+      </li><li>	Obecnie pełni funkcję starszego wykładowcy w Klinice Okulistyki Gdańskiego Uniwersytetu Medycznego oraz zastępcy ordynatora Kliniki Okulistyki Uniwersyteckiego Centrum Klinicznego. 
+      </li><li>	Należy do: Międzynarodowego Towarzystwa Chorób Zapalnych Oczu, Polskiego Towarzystwa Okulistycznego, Stowarzyszenia Ochrony Wzroku.
+      </li><li>	Członek zarządu Polskiego Stowarzyszenia AMD. 
+      </li><li>	Odbyte liczne staże krajowe i zagraniczne, między innymi:                              w Klinice Okulistycznej „Hadassah” w Jerozolimie (w zakresie: leczenia zapalnych chorób oczu), w Klinice Okulistycznej w Utrechcie (w zakresie zastosowania metod laseroterapii w okulistyce), w Klinice Okulistycznej w Uppsali( nowoczesne metody diagnostyki i leczenia jaskry i zaćmy).
+      </li><li>	Przewodniczący komitetów naukowych licznych konferencji okulistycznych.
+      </li><li>	Autor około 40 publikacji naukowych.
+      </li><li>	Opiekun lekarzy rezydentów specjalizujących się w okulistyce (około 30 lekarzy okulistów zdobyło specjalizację pod jego kierownictwem).
+      </li><li>	Opiekun studentów VI roku kierunku lekarskiego. Koordynator szkoleń lekarzy rodzinnych w zakresie okulistyki.
+      </li><li>	Obecnie główne zainteresowania dotyczą diagnostyki i leczenia zwyrodnienia siatkówki związanego z wiekiem (AMD), zastosowaniu optycznej koherentnej tomografii oka (OCT), leczeniu AMD iniekcjami anty-VEGF do ciała szklistego oka, laseroterapii. 
+      </li></ul>
+      <b>Specjalizuje się w leczeniu zapalnych chorób oczu, laseroterapii, leczeniu i diagnostyce jaskry i zaćmy. </b>
+  </div>
+</div>
+
+<router-outlet></router-outlet>
