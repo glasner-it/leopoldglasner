@@ -6,7 +6,7 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'Dr n. med. Leopold Glasner';
+  title = 'dr n. med. Leopold Glasner';
   isSmallScreen = false;
   getIsSmallScreen(): boolean {
     const w = document.documentElement.clientWidth;
