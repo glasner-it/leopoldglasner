@@ -68,6 +68,15 @@
     position: relative;
   }
 
+  .card.highlight-card 
+  h1,
+  h2
+  {
+    font-size: 1.17em;
+    position: relative;
+    display: inline;
+  }
+
   .zdjecie {
     position: absolute;
     top: -50px;
@@ -81,6 +90,18 @@
     width: 150px;
     height: 150px;
     margin-bottom: 10px;
+  }
+
+  .rejestracjaTbl
+  {
+    text-align: center;
+    display: inline-block;
+    font-size: 16px;
+  }
+
+ .rejestracjaTbl h2
+  {
+    font-size: 16px;
   }
 
   td, tr { border: 2px; }
@@ -103,23 +124,23 @@
 <div class="content" role="main">
   <div class="card highlight-card card-small">
     <img src="assets/zdj.jpg" alt="{{title}}" class="zdjecie" *ngIf="isSmallScreen === false" />
-    <span><h3>{{ title }}</h3></span>
+    <span><h2>dr n. med. </h2><h1>Leopold Glasner</h1></span>
   </div>
   <img src="assets/zdj.jpg" alt="{{title}}" class="zdjecieMale" *ngIf="isSmallScreen === true" />
-  <div>
-      <table style="text-align: center;display: inline-block;font-size:16px;">
+  <div id="rejestracja">
+      <table class="rejestracjaTbl">
           <tr>
-              <td><b>Rejestracja:</b></td>
+              <td><h2 property="rejestracja"><b>Rejestracja:</b></h2></td>
            </tr>
           <tr>
-             <td><b><a href="tel:585546493">58 554 64 93</a></b></td>
+             <td><h2 property="telefon"><a id="telefon" href="tel:585546493">58 554 64 93</a></h2><b></b></td>
           </tr>
           <tr>
-             <td><b>ul. Kwiatkowskiego 11c (Gdańsk, Osowa</b>)</td>
+             <td><h2 property="adres" id="adres"><b>ul. Kwiatkowskiego 11c (Gdańsk, Osowa)</b></h2></td>
           </tr>
        </table>
   </div>
-  <div style="width: 100%;text-align: left;">
+  <div id="informacje" style="width: 100%;text-align: left;" property="informacje">
       <br />
       Absolwent wydziału lekarskiego Akademii Medycznej w Gdańsku 1979 roku.   
       <br />
